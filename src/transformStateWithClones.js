@@ -30,10 +30,15 @@ function transformStateWithClones(state, actions) {
         break;
       }
 
-      default: {
+      case 'removeProperties': {
         for (const key of prop.keysToRemove) {
           delete lastElement[key];
         }
+        break;
+      }
+
+      default: {
+        return 'Please enter valid data';
       }
     }
 
